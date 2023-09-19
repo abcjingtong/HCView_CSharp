@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{427EC7B8-CBF1-4C50-ABFD-7A3A3B1892C0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EMRView</RootNamespace>
+    <AssemblyName>EMRView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="emrCommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="emrCompiler.cs" />
+    <Compile Include="emrDB.cs" />
+    <Compile Include="frmDataElementDomain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDataElementDomain.Designer.cs">
+      <DependentUpon>frmDataElementDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeCombobox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeCombobox.Designer.cs">
+      <DependentUpon>frmDeCombobox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeFloatItemProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeFloatItemProperty.Designer.cs">
+      <DependentUpon>frmDeFloatItemProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeInfo.Designer.cs">
+      <DependentUpon>frmDeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeRadioGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeRadioGroup.Designer.cs">
+      <DependentUpon>frmDeRadioGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDomain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDomain.Designer.cs">
+      <DependentUpon>frmDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDomainItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDomainItem.Designer.cs">
+      <DependentUpon>frmDomainItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDomainInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDomainInfo.Designer.cs">
+      <DependentUpon>frmDomainInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportRecord.Designer.cs">
+      <DependentUpon>frmImportRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientHisRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientHisRecord.Designer.cs">
+      <DependentUpon>frmPatientHisRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmItemContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItemContent.Designer.cs">
+      <DependentUpon>frmItemContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScriptIDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScriptIDE.Designer.cs">
+      <DependentUpon>frmScriptIDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplateInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplateInfo.Designer.cs">
+      <DependentUpon>frmTemplateInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecordSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecordSet.Designer.cs">
+      <DependentUpon>frmRecordSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HCEmrEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCEmrElementItem.cs" />
+    <Compile Include="HCEmrFangJiaoItem.cs" />
+    <Compile Include="HCEmrGroupItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HCEmrToothItem.cs" />
+    <Compile Include="frmTableBorderBackColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTableBorderBackColor.Designer.cs">
+      <DependentUpon>frmTableBorderBackColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplateList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplateList.Designer.cs">
+      <DependentUpon>frmTemplateList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HCEmrView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCEmrViewLite.cs" />
+    <Compile Include="HCEmrYueJingItem.cs" />
+    <Compile Include="frmDataElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDataElement.Designer.cs">
+      <DependentUpon>frmDataElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeControlProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeControlProperty.Designer.cs">
+      <DependentUpon>frmDeControlProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeProperty.Designer.cs">
+      <DependentUpon>frmDeProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeTableProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeTableProperty.Designer.cs">
+      <DependentUpon>frmDeTableProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertTable.Designer.cs">
+      <DependentUpon>frmInsertTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPageSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPageSet.Designer.cs">
+      <DependentUpon>frmPageSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmParagraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParagraph.Designer.cs">
+      <DependentUpon>frmParagraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientRecord.Designer.cs">
+      <DependentUpon>frmPatientRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoctorStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoctorStation.Designer.cs">
+      <DependentUpon>frmDoctorStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecord.Designer.cs">
+      <DependentUpon>frmRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecordPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecordPop.Designer.cs">
+      <DependentUpon>frmRecordPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplate.Designer.cs">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInputHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HCEmrViewIH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmInputHelper.Designer.cs">
+      <DependentUpon>frmInputHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptCodeStruct.cs" />
+    <Compile Include="ScriptCompileException.cs" />
+    <Compile Include="ScriptEngine.cs" />
+    <Compile Include="ScriptException.cs" />
+    <Compile Include="ScriptGlobal.cs" />
+    <Compile Include="ScriptMethodInvoker.cs" />
+    <Compile Include="ScriptPropertyAccessor.cs" />
+    <EmbeddedResource Include="frmDataElement.resx">
+      <DependentUpon>frmDataElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDataElementDomain.resx">
+      <DependentUpon>frmDataElementDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeCombobox.resx">
+      <DependentUpon>frmDeCombobox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeControlProperty.resx">
+      <DependentUpon>frmDeControlProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeFloatItemProperty.resx">
+      <DependentUpon>frmDeFloatItemProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeInfo.resx">
+      <DependentUpon>frmDeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeProperty.resx">
+      <DependentUpon>frmDeProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeRadioGroup.resx">
+      <DependentUpon>frmDeRadioGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeTableProperty.resx">
+      <DependentUpon>frmDeTableProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDomain.resx">
+      <DependentUpon>frmDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDomainItem.resx">
+      <DependentUpon>frmDomainItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDomainInfo.resx">
+      <DependentUpon>frmDomainInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportRecord.resx">
+      <DependentUpon>frmImportRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientHisRecord.resx">
+      <DependentUpon>frmPatientHisRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertTable.resx">
+      <DependentUpon>frmInsertTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoctorStation.resx">
+      <DependentUpon>frmDoctorStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItemContent.resx">
+      <DependentUpon>frmItemContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPageSet.resx">
+      <DependentUpon>frmPageSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmParagraph.resx">
+      <DependentUpon>frmParagraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientRecord.resx">
+      <DependentUpon>frmPatientRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecord.resx">
+      <DependentUpon>frmRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordPop.resx">
+      <DependentUpon>frmRecordPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScriptIDE.resx">
+      <DependentUpon>frmScriptIDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTableBorderBackColor.resx">
+      <DependentUpon>frmTableBorderBackColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplate.resx">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplateInfo.resx">
+      <DependentUpon>frmTemplateInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplateList.resx">
+      <DependentUpon>frmTemplateList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordSet.resx">
+      <DependentUpon>frmRecordSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInputHelper.resx">
+      <DependentUpon>frmInputHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\HCView.csproj">
+      <Project>{101C0F99-3772-4F26-8F49-D753AE54A251}</Project>
+      <Name>HCView</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00003.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00004.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00018.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00023.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00129.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00196.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00057.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00058.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00113.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00114.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00115.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00115U.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\段00120.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\段00121.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\段00122.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\段00123.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\段落分散对齐09246.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\行间距057341.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00015.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\00014.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

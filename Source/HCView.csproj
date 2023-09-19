@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{101C0F99-3772-4F26-8F49-D753AE54A251}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HC.View</RootNamespace>
+    <AssemblyName>HCView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNPLACEHOLDERCHAR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;UNPLACEHOLDERCHAR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNPLACEHOLDERCHAR;CHECKNULLITEM;RESETTABLEUSEFIRSTROWHEIGHT;TABLEROWRESTOREAUTOHEIGHT</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;UNPLACEHOLDERCHAR</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HCAnnotateData.cs" />
+    <Compile Include="HCAnnotateItem.cs" />
+    <Compile Include="HCBarCodeItem.cs" />
+    <Compile Include="HCButtonItem.cs" />
+    <Compile Include="HCCanvas.cs" />
+    <Compile Include="HCCheckBoxItem.cs" />
+    <Compile Include="HCCode128.cs" />
+    <Compile Include="HCComboboxItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HCCommon.cs" />
+    <Compile Include="HCCustomData.cs" />
+    <Compile Include="HCDateTimePicker.cs" />
+    <Compile Include="HCDrawItem.cs" />
+    <Compile Include="HCEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCEditItem.cs" />
+    <Compile Include="HCExpressItem.cs" />
+    <Compile Include="HCCustomFloatItem.cs" />
+    <Compile Include="HCFloatBarCodeItem.cs" />
+    <Compile Include="HCFloatLineItem.cs" />
+    <Compile Include="HCFormatData.cs" />
+    <Compile Include="HCFractionItem.cs" />
+    <Compile Include="HCGifItem.cs" />
+    <Compile Include="HCImageItem.cs" />
+    <Compile Include="HCItem.cs" />
+    <Compile Include="HCPage.cs" />
+    <Compile Include="HCParaStyle.cs" />
+    <Compile Include="HCPopupForm.cs" />
+    <Compile Include="HCQRCodeItem.cs" />
+    <Compile Include="HCRadioGroup.cs" />
+    <Compile Include="HCRectItem.cs" />
+    <Compile Include="HCRichData.cs" />
+    <Compile Include="HCRtfReader.cs" />
+    <Compile Include="HCRtfRW.cs" />
+    <Compile Include="HCShape.cs" />
+    <Compile Include="HCStatusScrollBar.cs" />
+    <Compile Include="HCToolBar.cs" />
+    <Compile Include="HCUnitConversion.cs" />
+    <Compile Include="HCViewData.cs" />
+    <Compile Include="HCRichScrollBar.cs" />
+    <Compile Include="HCScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HCSection.cs" />
+    <Compile Include="HCSectionData.cs" />
+    <Compile Include="HCStyle.cs" />
+    <Compile Include="HCStyleMatch.cs" />
+    <Compile Include="HCSupSubScriptItem.cs" />
+    <Compile Include="HCTableCell.cs" />
+    <Compile Include="HCTableCellData.cs" />
+    <Compile Include="HCTableItem.cs" />
+    <Compile Include="HCTableRow.cs" />
+    <Compile Include="HCTextItem.cs" />
+    <Compile Include="HCTextStyle.cs" />
+    <Compile Include="HCUndo.cs" />
+    <Compile Include="HCUndoData.cs" />
+    <Compile Include="HCView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCLineItem.cs" />
+    <Compile Include="HCViewDevData.cs" />
+    <Compile Include="HCViewLite.cs" />
+    <Compile Include="HCViewTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HCTabItem.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SharpZXingQRCode.cs" />
+    <Compile Include="Win32.cs" />
+    <Compile Include="Win32.ErrorCodes.cs" />
+    <Compile Include="Win32.GDI.cs" />
+    <Compile Include="Win32.Imm.cs" />
+    <Compile Include="Win32.Kernel.cs" />
+    <Compile Include="Win32.Multimedia.cs" />
+    <Compile Include="Win32.NetApi.cs" />
+    <Compile Include="Win32.Shell.cs" />
+    <Compile Include="Win32.User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HCView.resx">
+      <DependentUpon>HCView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\tool0.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\tool1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\tool2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\tool3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\tool4.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool5.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool9.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
