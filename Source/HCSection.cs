@@ -2113,7 +2113,7 @@ namespace HC.View
             #region 有FloatItem时短路
             if (FActiveData.FloatItems.Count > 0)
             {
-                int vX2 = vX;  // 使用另外的变量，防止FloatItem不处理时影响下面的正常计算
+                int vX2 = vX;
                 int vY2 = vY;
 
                 PaperCoordToData(FActivePageIndex, FActiveData, ref vX2, ref vY2, false);
