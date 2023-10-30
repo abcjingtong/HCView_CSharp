@@ -109,6 +109,8 @@ namespace HC.View
                 }
             }
 
+            aPageSettings.PaperSize.RawKind = (int)FSections[aSectionIndex].PaperSize;
+
             aPageSettings.Margins.Left = 0;
             aPageSettings.Margins.Top = 0;
             aPageSettings.Margins.Right = 0;
@@ -2388,29 +2390,43 @@ namespace HC.View
                         //Clipboard.SetDataObject(vDataObj);
 
                         byte[] vBuffer = new byte[0];
-                        IntPtr vMem = (IntPtr)Kernel.GlobalAlloc(Kernel.GMEM_MOVEABLE | Kernel.GMEM_DDESHARE, (int)vStream.Length);
+
+                        IntPtr vMem = System.Runtime.InteropServices.Marshal.AllocHGlobal((int)vStream.Length);
                         try
                         {
-                            if (vMem == IntPtr.Zero)
-                                throw new Exception(HC.HCS_EXCEPTION_MEMORYLESS);
-                            IntPtr vPtr = (IntPtr)Kernel.GlobalLock(vMem);
-                            try
-                            {
-                                vStream.Position = 0;
-                                vBuffer = vStream.ToArray();
-                                System.Runtime.InteropServices.Marshal.Copy(vBuffer, 0, vPtr, vBuffer.Length);
-                                //Kernel.CopyMemory(vPtr, vStream.ToArray(), (int)vStream.Length);
-                            }
-                            finally
-                            {
-                                Kernel.GlobalUnlock(vMem);
-                            }
+                            vStream.Position = 0;
+                            vBuffer = vStream.ToArray();
+                            System.Runtime.InteropServices.Marshal.Copy(vBuffer, 0, vMem, vBuffer.Length);
                         }
                         catch
                         {
-                            Kernel.GlobalFree(vMem);
+                            System.Runtime.InteropServices.Marshal.FreeHGlobal(vMem);
                             return;
                         }
+
+                        //IntPtr vMem = (IntPtr)Kernel.GlobalAlloc(Kernel.GMEM_MOVEABLE | Kernel.GMEM_DDESHARE, (int)vStream.Length);
+                        //try
+                        //{
+                        //    if (vMem == IntPtr.Zero)
+                        //        throw new Exception(HC.HCS_EXCEPTION_MEMORYLESS);
+                        //    IntPtr vPtr = (IntPtr)Kernel.GlobalLock(vMem);
+                        //    try
+                        //    {
+                        //        vStream.Position = 0;
+                        //        vBuffer = vStream.ToArray();
+                        //        System.Runtime.InteropServices.Marshal.Copy(vBuffer, 0, vPtr, vBuffer.Length);
+                        //        //Kernel.CopyMemory(vPtr, vStream.ToArray(), (int)vStream.Length);
+                        //    }
+                        //    finally
+                        //    {
+                        //        Kernel.GlobalUnlock(vMem);
+                        //    }
+                        //}
+                        //catch
+                        //{
+                        //    Kernel.GlobalFree(vMem);
+                        //    return;
+                        //}
 
                         vBuffer = System.Text.Encoding.Unicode.GetBytes(this.ActiveSectionTopLevelData().SaveSelectToText());
                         IntPtr vMemText = (IntPtr)Kernel.GlobalAlloc(Kernel.GMEM_MOVEABLE | Kernel.GMEM_DDESHARE, vBuffer.Length + 2);
