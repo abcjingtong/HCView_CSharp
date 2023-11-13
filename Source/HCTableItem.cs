@@ -1672,9 +1672,13 @@ namespace HC.View
     
             if (FRows[FMouseMoveRow][FMouseMoveCol].CellData != null)
                 FRows[FMouseMoveRow][FMouseMoveCol].CellData.MouseLeave();  // .MouseMove([], -1, -1);  // 处理鼠标移上高亮在迅速移出表格后不能恢复的问题
-    
+
             if (!SelectExists())
-                this.InitializeMouseInfo();
+            {
+                //this.InitializeMouseInfo();
+                FMouseMoveRow = -1;
+                FMouseMoveCol = -1;
+            }
         }
 
         public override void KillFocus()
@@ -4683,9 +4687,9 @@ namespace HC.View
                 return;
 
             RECT vRect = HC.Bounds(ALeft, ATop, Width, vH);
-            if (!APaintInfo.Print)
+            if (APaintInfo.Print)
             {
-                ACanvas.Brush.Color = HC.clBtnFace;
+                ACanvas.Brush.Color = Color.White;
                 ACanvas.FillRect(vRect);
             }
 
