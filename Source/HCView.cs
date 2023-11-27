@@ -3607,7 +3607,7 @@ namespace HC.View
             if (!vPrinter.PrinterSettings.IsValid)
                 return PrintResult.prError;
 
-            vPrinter.DocumentName = FFileName;
+            vPrinter.DocumentName = vPrinter.DocumentName = string.IsNullOrEmpty(FFileName) ? "HCF文件" : FFileName;
             // 取打印机打印区域相关参数
             //int vPrintOffsetX = (int)vPrinter.PrinterSettings.DefaultPageSettings.HardMarginX;  // -GetDeviceCaps(Printer.Handle, PHYSICALOFFSETX);  // 73
             //int vPrintOffsetY = (int)vPrinter.PrinterSettings.DefaultPageSettings.HardMarginY;  // -GetDeviceCaps(Printer.Handle, PHYSICALOFFSETY);  // 37
