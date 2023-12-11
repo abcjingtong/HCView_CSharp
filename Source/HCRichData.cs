@@ -690,8 +690,15 @@ namespace HC.View
         public override void Clear()
         {
             InitializeField();
-            int vStyleNo = this.Items[0].StyleNo;
-            int vParaNo = this.Items[0].ParaNo;
+            int vStyleNo = 0;
+            int vParaNo = 0;
+
+            if (Items.Count > 0)
+            {
+                vStyleNo = this.Items[0].StyleNo;
+                vParaNo = this.Items[0].ParaNo;
+            }
+
             base.Clear();
             if (vStyleNo > HCStyle.Null && vStyleNo < this.Style.TextStyles.Count)
                 FCurStyleNo = vStyleNo;
@@ -1219,9 +1226,10 @@ namespace HC.View
                         UndoAction_ItemMirror(SelectInfo.StartItemNo, HC.OffsetInner);
 
                     vFormatFirstDrawItemNo = GetFormatFirstDrawItem(Items[SelectInfo.StartItemNo].FirstDItemNo);
-                    FormatPrepare(vFormatFirstDrawItemNo, SelectInfo.StartItemNo);
+                    vFormatLastItemNo = GetParaLastItemNo(SelectInfo.StartItemNo);
+                    FormatPrepare(vFormatFirstDrawItemNo, vFormatLastItemNo);
                     (Items[SelectInfo.StartItemNo] as HCCustomRectItem).ApplySelectParaStyle(this.Style, aMatchStyle);
-                    ReFormatData(vFormatFirstDrawItemNo, SelectInfo.StartItemNo);
+                    ReFormatData(vFormatFirstDrawItemNo, vFormatLastItemNo);
                 }
                 else
                 {
@@ -2387,6 +2395,22 @@ namespace HC.View
 
                             vMerged = true;
                         }
+                    }
+                }
+                else  // 新插入的文本Item是另起一段
+                {
+                    if (aItem.Text == "" && aIndex < Items.Count && !Items[aIndex].ParaFirst)  // 是个回车，并且插入位置不是段首 XL20230808002
+                    {
+                        GetFormatRange(aIndex, 1, ref vFormatFirstDrawItemNo, ref vFormatLastItemNo);
+                        FormatPrepare(vFormatFirstDrawItemNo, vFormatLastItemNo);
+
+                        UndoAction_ItemParaFirst(aIndex, 0, true);
+                        Items[aIndex].ParaFirst = true;
+
+                        ReFormatData(vFormatFirstDrawItemNo, vFormatLastItemNo, 0);
+                        ReSetSelectAndCaret(aIndex);
+
+                        vMerged = true;
                     }
                 }
 
@@ -5154,6 +5178,8 @@ namespace HC.View
 
                 if ((Key == User.VK_BACK) || (Key == User.VK_DELETE))
                     return;
+
+                vCurItem = GetActiveItem();
             }
 
             int vParaFirstItemNo = -1, vParaLastItemNo = -1;
