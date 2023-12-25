@@ -1386,7 +1386,7 @@ namespace HC.View
             if (!DoAcceptAction(SelectInfo.StartItemNo, SelectInfo.StartItemOffset, HCAction.actDeleteSelected))
                 return false;
 
-            bool Result = false;
+            bool Result = true;
             bool vSelectSeekStart = IsSelectSeekStart();
             int vDelCount = 0;
 
@@ -1723,7 +1723,7 @@ namespace HC.View
 
             this.InitializeField();
             ReSetSelectAndCaret(SelectInfo.StartItemNo, SelectInfo.StartItemOffset, !vSelectSeekStart);
-            return true;
+            return Result;
         }
 
         /// <summary> 初始化相关字段和变量 </summary>
