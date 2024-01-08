@@ -40,6 +40,12 @@ namespace HC.View
             return HC.PtInRect(HC.Bounds(0, 0, Width, FCellHeight), aPt);
         }
 
+        public override void ReFormat()
+        {
+            base.ReFormat();
+            DoFormatDirty();
+        }
+
         protected override int GetHeight()
         {
             int Result = base.GetHeight();

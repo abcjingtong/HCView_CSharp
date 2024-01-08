@@ -57,12 +57,20 @@ namespace HC.View
                 if (FEmpty)
                     return;
 
-                aCanvas.StretchPrintDrawBitmap(aDrawRect, FImage);
+                if (FImage.Width != Width || FImage.Height != Height)
+                    aCanvas.StretchPrintDrawBitmap(aDrawRect, FImage);
+                else
+                    aCanvas.PrintDrawImage(aDrawRect.Left, aDrawRect.Top, FImage);
             }
             else
             if (!FEmpty)
-                aCanvas.StretchDraw(aDrawRect, FImage);
-            else            
+            {
+                if (FImage.Width != Width || FImage.Height != Height)
+                    aCanvas.StretchDraw(aDrawRect, FImage);
+                else
+                    aCanvas.Draw(aDrawRect.Left, aDrawRect.Top, FImage);
+            } 
+            else
             {
                 aCanvas.Pen.BeginUpdate();
                 try
