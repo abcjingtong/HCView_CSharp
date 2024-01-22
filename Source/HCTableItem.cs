@@ -423,11 +423,11 @@ namespace HC.View
         {
             POINT Result = new POINT(FBorderWidthPix, FBorderWidthPix);
 
-            for (int i = 0; i <= aRow - 1; i++)
+            for (int i = 0; i < aRow; i++)
                 Result.Y = Result.Y + FRows[i].FmtOffset + FRows[i].Height + FBorderWidthPix;
     
             Result.Y = Result.Y + FRows[aRow].FmtOffset;
-            for (int i = 0; i <= aCol - 1; i++)
+            for (int i = 0; i < aCol; i++)
                 Result.X = Result.X + FColWidths[i] + FBorderWidthPix;
 
             return Result;
@@ -1705,7 +1705,7 @@ namespace HC.View
                     FRows[vR].FmtOffset = 0;
                 }
 
-                for (int vC = 0; vC <= ColCount - 1; vC++)
+                for (int vC = 0; vC < ColCount; vC++)
                 {
                     vCell = FRows[vR][vC];
                     if ((vCell.ClearFormatExtraHeight() != 0)
@@ -1798,9 +1798,9 @@ namespace HC.View
         public override void MarkStyleUsed(bool aMark)
         {
             base.MarkStyleUsed(aMark);
-            for (int vR = 0; vR <= FRows.Count - 1; vR++)
+            for (int vR = 0; vR < FRows.Count; vR++)
             {
-                for (int vC = 0; vC <= FRows[vR].ColCount - 1; vC++)
+                for (int vC = 0; vC < FRows[vR].ColCount; vC++)
                 {
                     if (FRows[vR][vC].CellData != null)
                         FRows[vR][vC].CellData.MarkStyleUsed(aMark);
@@ -1849,7 +1849,7 @@ namespace HC.View
                 }
 
                 vBottom = this.Height;
-                for (int i = 0; i <= FPageBreaks.Count - 1; i++)  // 找光标底部位
+                for (int i = 0; i < FPageBreaks.Count; i++)  // 找光标底部位
                 {
                     if (FPageBreaks[i].Row >= vRow)
                     {
@@ -2232,7 +2232,7 @@ namespace HC.View
             for (int vR = aERow; vR >= aSRow; vR--)  // 遍历
             {
                 vEmptyRow = true;
-                for (int vC = 0; vC <= FRows[vR].ColCount - 1; vC++)  // 当前行各
+                for (int vC = 0; vC < FRows[vR].ColCount; vC++)  // 当前行各
                 {
                     if (FRows[vR][vC].CellData != null)
                     {
@@ -2244,9 +2244,9 @@ namespace HC.View
                 if (vEmptyRow)
                 {
                     HCTableCell vTableCell = null;
-                    for (int i = 0; i <= vR - 1; i++)
+                    for (int i = 0; i < vR; i++)
                     {
-                        for (int vC = 0; vC <= FRows[i].ColCount - 1; vC++)
+                        for (int vC = 0; vC < FRows[i].ColCount; vC++)
                         {
                             vTableCell = FRows[i][vC];
                             if (i + vTableCell.RowSpan >= vR)
@@ -2254,9 +2254,9 @@ namespace HC.View
                         }
                     }
 
-                    for (int i = vR + 1; i <= FRows.Count - 1; i++)
+                    for (int i = vR + 1; i < FRows.Count; i++)
                     {
-                        for (int vC = 0; vC <= FRows[i].ColCount - 1; vC++)
+                        for (int vC = 0; vC < FRows[i].ColCount; vC++)
                         {
                             vTableCell = FRows[i][vC];
                             if (i + vTableCell.RowSpan < vR)
@@ -2276,7 +2276,7 @@ namespace HC.View
             for (int vC = aECol; vC >= aSCol; vC--)  // 循环各
             {
                 vEmptyCol = true;
-                for (int vR = 0; vR <= RowCount - 1; vR++)  // 循环各
+                for (int vR = 0; vR < RowCount; vR++)  // 循环各
                 {
                     if (FRows[vR][vC].CellData != null)
                     {
@@ -2290,14 +2290,14 @@ namespace HC.View
                     HCTableCell vTableCell = null;
                     for (int vR = RowCount - 1; vR >= 0; vR--)  // 循环各行，删除对应
                     {
-                        for (int i = 0; i <= vC - 1; i++)
+                        for (int i = 0; i < vC; i++)
                         {
                             vTableCell = FRows[vR][i];
                             if (i + vTableCell.ColSpan >= vC)
                                 vTableCell.ColSpan = vTableCell.ColSpan - 1;
                         }
 
-                        for (int i = vC; i <= FRows[vR].ColCount - 1; i++)
+                        for (int i = vC; i < FRows[vR].ColCount; i++)
                         {
                             vTableCell = FRows[vR][i];
                             if (i + vTableCell.ColSpan < vC)
@@ -2428,9 +2428,9 @@ namespace HC.View
             int viDestRow = -1, viDestCol = -1;
             HCTableCell vCell;
             int vWidth = HC.MinColWidth - FBorderWidthPix;
-            for (int i = 0; i <= aCount - 1; i++)
+            for (int i = 0; i < aCount; i++)
             {
-                for (int vRow = 0; vRow <= RowCount - 1; vRow++)
+                for (int vRow = 0; vRow < RowCount; vRow++)
                 {
                     vCell = FRows[vRow].CreateCell(OwnerData.Style);
                     vCell.Width = vWidth;
@@ -2478,12 +2478,12 @@ namespace HC.View
             int viDestRow = -1, viDestCol = -1;
             HCTableRow vTableRow;
 
-            for (int i = 0; i <= aCount - 1; i++)
+            for (int i = 0; i < aCount; i++)
             {
                 vTableRow = DoCreateRow(OwnerData.Style, FColWidths.Count);
                 vTableRow.Height = FDefaultRowHeight;
 
-                for (int vCol = 0; vCol <= FColWidths.Count - 1; vCol++)
+                for (int vCol = 0; vCol < FColWidths.Count; vCol++)
                 {
                     vTableRow[vCol].Width = FColWidths[vCol];
 
@@ -2526,7 +2526,7 @@ namespace HC.View
             Undo_Mirror();
 
             int viDestRow = -1, viDestCol = -1;
-            for (int vRow = 0; vRow <= RowCount - 1; vRow++)
+            for (int vRow = 0; vRow < RowCount; vRow++)
             {
                 if (FRows[vRow][aCol].ColSpan < 0)
                 {
@@ -2566,7 +2566,7 @@ namespace HC.View
             Undo_Mirror();
 
             int viDestRow = -1, viDestCol = -1;
-            for (int vCol = 0; vCol <= FColWidths.Count - 1; vCol++)
+            for (int vCol = 0; vCol < FColWidths.Count; vCol++)
             {
                 if (FRows[aRow][vCol].RowSpan < 0)
                 {
@@ -2659,15 +2659,15 @@ namespace HC.View
             FFixCol = vSrcTable.FixCol;
             FFixColCount = vSrcTable.FixColCount;
 
-            for (int vC = 0; vC <= this.ColCount - 1; vC++)
+            for (int vC = 0; vC < this.ColCount; vC++)
                 FColWidths[vC] = vSrcTable.FColWidths[vC];
 
-            for (int vR = 0; vR <= this.RowCount - 1; vR++)
+            for (int vR = 0; vR < this.RowCount; vR++)
             {
                 FRows[vR].AutoHeight = vSrcTable.Rows[vR].AutoHeight;
                 FRows[vR].Height = vSrcTable.Rows[vR].Height;
 
-                for (int vC = 0; vC <= this.ColCount - 1; vC++)
+                for (int vC = 0; vC < this.ColCount; vC++)
                 {
                     this[vR, vC].Width = FColWidths[vC];
                     this[vR, vC].RowSpan = vSrcTable[vR, vC].RowSpan;
