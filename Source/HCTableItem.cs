@@ -3261,12 +3261,12 @@ namespace HC.View
 
         public override void TraverseItem(HCItemTraverse aTraverse)
         {
-            for (int vR = 0; vR <= FRows.Count - 1; vR++)
+            for (int vR = 0; vR < FRows.Count; vR++)
             {
                 if (aTraverse.Stop)
                     break;
 
-                for (int vC = 0; vC <= FColWidths.Count - 1; vC++)
+                for (int vC = 0; vC < FColWidths.Count; vC++)
                 {
                     if (aTraverse.Stop)
                         break;
@@ -3396,7 +3396,7 @@ namespace HC.View
                     Result = FRows[vRow][vCol].CellData.Search(aKeyword, aForward, aMatchCase);
                     if (!Result)
                     {
-                        for (int j = vCol + 1; j <= FColWidths.Count - 1; j++)  // 在同行后面的单元格
+                        for (int j = vCol + 1; j < FColWidths.Count; j++)  // 在同行后面的单元格
                         {
                             if ((FRows[vRow][j].ColSpan < 0) || (FRows[vRow][j].RowSpan < 0))
                                 continue;
@@ -3420,9 +3420,9 @@ namespace HC.View
 
                     if (!Result)  // 同行后面的单元格没找到
                     {
-                        for (int i = FSelectCellRang.StartRow + 1; i <= FRows.Count - 1; i++)
+                        for (int i = FSelectCellRang.StartRow + 1; i < FRows.Count; i++)
                         {
-                            for (int j = 0; j <= FColWidths.Count - 1; j++)
+                            for (int j = 0; j < FColWidths.Count; j++)
                             {
                                 if ((FRows[i][j].ColSpan < 0) || (FRows[i][j].RowSpan < 0))
                                     continue;
@@ -3652,7 +3652,7 @@ namespace HC.View
                 return;
             }
 
-            for (int vR = 0; vR <= RowCount - 1; vR++)  // 格式化各
+            for (int vR = 0; vR < RowCount; vR++)  // 格式化各
             {
                 FormatRow(vR);  // 格式化行，并计算行高度
                 CalcRowCellHeight(vR);  // 以行中所有无行合并操作列中最大高度更新其他列
