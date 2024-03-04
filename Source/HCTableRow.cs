@@ -30,7 +30,7 @@ namespace HC.View
         private OnGetTableIntEvent FOnGetVPaddingPix, FOnGetDefaultRowHeight;
         private int CalcMaxCellDataHeight()
         {
-            int vResult;
+            int vResult, vH;
             if (FOnGetDefaultRowHeight != null)
                 vResult = FOnGetDefaultRowHeight();
             else
@@ -40,8 +40,9 @@ namespace HC.View
             {
                 if ((this[i].CellData != null) && (this[i].RowSpan == 0))
                 {
-                    if (this[i].CellData.Height > vResult)
-                        vResult = this[i].CellData.Height;
+                    vH = this[i].CellData.Height;
+                    if (vH > vResult)
+                        vResult = vH;
                 }
             }
 
