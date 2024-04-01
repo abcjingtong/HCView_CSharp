@@ -3740,7 +3740,7 @@ namespace HC.View
                         {
                             if (DrawItems[vDrawItemNo].ItemNo > SelectInfo.StartItemNo)
                             {
-                                SelectInfo.EndItemNo = vDrawItemNo;
+                                SelectInfo.EndItemNo = DrawItems[vDrawItemNo].ItemNo;
                                 SelectInfo.EndItemOffset = vDrawItemOffset;
                                 CheckSelectEndEff();
                                 SetSelectSeekEnd();
