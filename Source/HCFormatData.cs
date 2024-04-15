@@ -391,6 +391,9 @@ namespace HC.View
         {
             switch (aPosType)
             {
+                case CharType.jctBreak:
+                    return BreakPosition.jbpPrev;
+
                 case CharType.jctHZ:
                     {
                         if ((aPrevType == CharType.jctZM)
