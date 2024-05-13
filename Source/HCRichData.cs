@@ -693,7 +693,7 @@ namespace HC.View
             int vStyleNo = 0;
             int vParaNo = 0;
 
-            if (Items.Count > 0)
+            if (this.Items.Count > 0)
             {
                 vStyleNo = this.Items[0].StyleNo;
                 vParaNo = this.Items[0].ParaNo;
