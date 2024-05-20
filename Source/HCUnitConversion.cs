@@ -104,5 +104,15 @@ namespace HC.View
         {
             return value / 1440 * 72;
         }
+
+        public static int Pix96ToLogic(int pix)
+        {
+            return (int)(pix * DPIScale);
+        }
+
+        public static Single PtTo96(Single pt)
+        {
+            return pt / DPIScale;
+        }
     }
 }
