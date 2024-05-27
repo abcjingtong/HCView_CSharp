@@ -12,6 +12,7 @@ namespace HC.View
             PixelsPerMMX = 3.7f,
             PixelsPerMMY = 3.7f,
             FontSizeScale = 0.75f;
+            DPIScale = 1f;
 
         public static int
             PixelsPerInchX = 96,
@@ -24,6 +25,7 @@ namespace HC.View
             {
                 PixelsPerInchX = GDI.GetDeviceCaps(vDC, GDI.LOGPIXELSX);  // 每英寸水平逻辑像素数，1英寸dpi数
                 PixelsPerInchY = GDI.GetDeviceCaps(vDC, GDI.LOGPIXELSY);  // 每英寸水平逻辑像素数，1英寸dpi数
+                DPIScale = (Single)GDI.GetDeviceCaps(vDC, GDI.LOGPIXELSX) / HC.HCDefaultDPI;
             }
             finally
             {
