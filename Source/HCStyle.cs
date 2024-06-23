@@ -165,6 +165,11 @@ namespace HC.View
             FloatBarCode = -102,
             Annotate = -118,
             Chart = -119,
+            Fraction2 = -120,
+            Label = -121,
+            FloatLabel = -122,
+            FloatEdit = -123,
+            Shape = -124,
             Custom = -1000;  // 自定义类型分界线
 
         public HCStyle()

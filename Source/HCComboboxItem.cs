@@ -509,7 +509,7 @@ namespace HC.View
                     vText = "";
                     HC.HCLoadTextFromStream(AStream, ref vText, aFileVersion);
                     vStrings = vText.Split(new string[] { HC.sLineBreak }, StringSplitOptions.None);
-                    for (int i = 0; i < vStrings.Length; i++)
+                    for (int i = 0; i < FItems.count; i++)
                         FItemValues.Add(new HCCbbItem(vStrings[i]));
                 }
             }
