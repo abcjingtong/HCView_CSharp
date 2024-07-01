@@ -3119,7 +3119,8 @@ namespace HC.View
             {
                 if ((vEditCell.CellData.SelectLastLine()) && (FSelectCellRang.StartRow < this.RowCount - 1))
                 {
-                    GetDestCell(FSelectCellRang.StartRow + 1, FSelectCellRang.StartCol, ref vRow, ref vCol);
+                    GetSourceCell(FSelectCellRang.StartRow, FSelectCellRang.StartCol, ref vRow, ref vCol);
+                    GetDestCell(vRow + 1, FSelectCellRang.StartCol, ref vRow, ref vCol);
                     if ((vRow >= 0) && (vCol >= 0))
                     {
                         if ((vOldRow >= 0) && (vOldCol >= 0))
