@@ -3800,8 +3800,12 @@ namespace HC.View
             {
                 if (vSelectExist)
                 {
-                    SelectInfo.EndItemNo = -1;
-                    SelectInfo.EndItemOffset = -1;
+                    int vStartNo = SelectInfo.StartItemNo;
+                    int vStartOffset = SelectInfo.StartItemOffset;
+                    this.DisSelect();
+                    SelectInfo.StartItemNo = vStartNo;
+                    SelectInfo.StartItemOffset = vStartOffset;
+                    CaretDrawItemNo = GetDrawItemNoByOffset(vStartNo, vStartOffset);
                 }
                 else  // 无选中内容
                 {
