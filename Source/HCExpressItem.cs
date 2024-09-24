@@ -68,6 +68,7 @@ namespace HC.View
             }
             
             aCanvas.Pen.Color = Color.Black;
+            aCanvas.Pen.Width = 1;
             aCanvas.MoveTo(aDrawRect.Left + FLeftRect.Right + Padding, aDrawRect.Top + TopRect.Bottom + Padding);
             aCanvas.LineTo(aDrawRect.Left + FRightRect.Left - Padding, aDrawRect.Top + TopRect.Bottom + Padding);
             
