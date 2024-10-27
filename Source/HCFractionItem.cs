@@ -65,6 +65,7 @@ namespace HC.View
             if (!FLineHide)  // 分数线
             {
                 aCanvas.Pen.Color = Color.Black;
+                aCanvas.Pen.Width = 1;
                 aCanvas.MoveTo(aDrawRect.Left + FPadding, aDrawRect.Top + FTopRect.Bottom + FPadding);
                 aCanvas.LineTo(aDrawRect.Left + Width - FPadding, aDrawRect.Top + FTopRect.Bottom + FPadding);
             }
