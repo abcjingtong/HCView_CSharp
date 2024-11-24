@@ -5613,13 +5613,13 @@ namespace HC.View
         public HCCellPaintEventHandle OnCellPaintBK
         {
             get { return FOnCellPaintBK; }
-            set { OnCellPaintBK = value; }
+            set { FOnCellPaintBK = value; }
         }
 
         public HCCellPaintDataEventHandle OnCellPaintData
         {
-            get { return OnCellPaintData; }
-            set { OnCellPaintData = value; }
+            get { return FOnCellPaintData; }
+            set { FOnCellPaintData = value; }
         }
     }
 }
