@@ -37,6 +37,7 @@ namespace EMRView
             aCanvas.TextOut(aDrawRect.Left + BottomRect.Left, aDrawRect.Top + BottomRect.Top, BottomText);
 
             aCanvas.Pen.Color = Color.Black;
+            aCanvas.Pen.Width = 1;
             aCanvas.DrawLine(aDrawRect.Left, aDrawRect.Top, aDrawRect.Right, aDrawRect.Bottom);
             aCanvas.DrawLine(aDrawRect.Right, aDrawRect.Top, aDrawRect.Left, aDrawRect.Bottom);
 
